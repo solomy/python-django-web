@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>main page</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/menu_elastic.css" />
+		<script src="/static/js/snap.svg-min.js"></script>
+
+	</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+	<body>
+		<div>
+			<div class="menu-wrap" id="jicheng">
+				<nav class="menu">
+					<div class="icon-list">
+
+						<i class="fa fa-fw fa-star-o"></i><span>公司账户</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/insert_yewu/">登记业务</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_yewu/">业务一览表</a></li>
+
+						</ul>
+						<i class="fa fa-fw fa-bell-o"></i><span>人员管理</span>
+                         <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/update_search/">更新员工信息</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_people/">员工信息</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/insert_people/">插入新员工</a></li>
+						</ul>
+						<i class="fa fa-fw fa-envelope-o"></i><span>工资管理</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_salary/">查看工资</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/daka/">打卡</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="#">结算</a></li>
+						</ul>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>使用说明</span></a>
+					</div>
+				</nav>
+
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
+					</svg>
+				</div>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+<p align="center" style="font-family:黑体; font-size:25px">更新员工信息</p>
+        <form action="/update/" method="get" >
+        <h2 align="center">请输入员工工号</h2>
+        <p align="center">
+         <input type="text" name="search_id" style="font-size:24px">
+            <input type="submit" value="搜索" style="font-size:24px; font-family:alexa-std">
+        </p>
+        </form>id
+        </body>
+        
+        <body>
+        <p align="center" style="font-family:仿宋; font-size:20px; color:#1DD3B4" >
+        <a href="/main/">返回主界面</a>
+        </p>
+</body>
+</html>

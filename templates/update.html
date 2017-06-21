@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>更新员工</title>
+
+	</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+
+<p align="center" style="font-family:黑体; font-size:25px">职员信息修改</p>
+<form method="post">
+<table border=0 align="center"; style="font-family:仿宋; font-size:25px">
+<th>姓名</th>
+            <td class="gray">{{people.name}}</td>
+            </tr>
+            <tr>
+         	<th>职位</th>
+            <td class="gray"><input name="post_name" type="text" placeholder="{{post.post_name}}" class="mm"></td>
+	  </tr>
+            <th>性别</th>
+           <td class="gray"> {% if people.sex %} 男 {% else %} 女 {% endif %}</td>
+        </tr>
+        <tr>
+            <th>出生日期</th>
+            <td class="gray"><input name="birthday" type="date" placeholder="{{people.birthday}}" class="mm"></td>
+              </tr>
+            <th>民族</th>
+           <td class="gray"><input name="nation" placeholder="{{people.nation}}" type="text" class="mm"></td>
+        </tr>
+        <tr>
+            <th>籍贯</th>
+            <td class="gray"><input name="address" placeholder="{{people.address}}" type="text" class="mm"></td>
+          </tr>
+            <th>电话</th>
+            <td class="gray"><input name="phone" placeholder="{{people.phone}}" type="text" class="mm"></td>
+        </tr>
+	<th>Email</th>
+            <td class="gray"><input name="email" placeholder="{{people.email}}" type="text" class="mm"></td>
+        </tr>
+    	 
+	<tr>
+            <th>到职日期</th>
+            <td class="gray"><input name="date" type="text" placeholder="{{people.date}}" class="mm"></td>
+         </tr>
+</table>
+<p align="center" >
+<td class="gray" ><input type="submit" value="保存" style="font-family:黑体; font-size:15px"> <input type="reset" value="重填" style="font-family:黑体; font-size:15px"></td>
+</p>
+</form>
+</body>
+</html>

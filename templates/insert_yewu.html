@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head> 
+<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+		<title>添加业务</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+
+<style> 
+.gray{
+	border-bottom:1px solid #000000;
+	width:150px;
+	border-left:0px; border-top:0px; border-right:0px;
+	
+	background-color:transparent;
+	font-size:20px;
+}
+.mm{
+	
+	border-left:0px; border-top:0px; border-right:0px;
+	border-bottom:0px;
+	background-color:transparent;
+	font-size:20px;
+	height:30px;
+	width:270px;
+}
+.kk{
+	border-left:0px; border-top:0px; border-right:0px;
+	border-bottom:0px;
+	font-size:18px;
+}
+table{
+	width:auto;
+	font-size:18px;
+	empty-cells:show;
+	border-collapse:collapse;
+	width:auto;
+	color:#666;
+}
+th{
+	heigth:30px;
+	overflow:hidden;
+	width:110px;
+}
+td{
+	heigth:30px;
+	overflow:hidden;
+	width:150px;
+}
+</style>
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body>
+<div>
+
+
+<form method="post">
+<table  align="center" border="1" style="font-family:仿宋; font-size:25px">
+	<caption>
+    <p align="center" style="font-size:30px">业务记录登记<br>
+    </caption>
+		<tr>
+        	<th>业务名称</th>
+            <td><input name="title" type="text" class="mm"></td>
+			<th>业务ID</th>
+            <td><input name="id" type="text" class="mm"></td>
+		</tr>
+        <tr>
+        	<th>金额（元）</th><td colspan="3"><input name="money" style=" width:750px" type="text" class="mm"> </td>
+		</tr>
+    	 <tr>
+         	<th>负责人</th>
+            <td><input name="person" type="text" class="mm"></td>
+            <th>执行日期</th>
+            <td><input name="date" type="text" class="mm"></td>
+         </tr>
+         <tr>
+			 <th>备注</th>
+			 <td colspan="3"><textarea name="beizhu" style="width:745px;background: #b4bad2;color: #fffce1" rows="10" class="kk" ></textarea></td>
+         </tr>
+</table>
+
+<p align="center" >
+<td class="gray" ><input type="submit" value="保存" style="font-family:楷体; font-size:25px"> <input type="reset" value="重填" style="font-family:楷体; font-size:25px"></td>
+</p>
+</br></br></br></br>
+</form>
+	<div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+</div>
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/main3.js"></script>
+        </body>
+</body>
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

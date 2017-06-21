@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html>
+<head> 
+			<meta charset="utf-8">
+			<title>编辑人员</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+<style>
+
+.gray{
+	background-color:transparent;
+	font-size:20px;
+}
+.mm{
+	
+	background-color:transparent;
+	font-size:20px;
+	height:21px;
+	width:270px;
+}
+.kk{
+	border-left:0px; border-top:0px; border-right:0px;
+	border-bottom:0px;
+	font-size:18px;
+}
+table{
+	width:auto;
+	font-size:18px;
+	empty-cells:show;
+	border-collapse:collapse;
+	width:auto;
+	color:#666;
+}
+th{
+	heigth:30px;
+	overflow:hidden;
+	width:150px;
+}
+td{
+	heigth:30px;
+	overflow:hidden;
+	width:150px;
+	border-bottom:1px ;
+	border-left:1px;
+	border-top:0px; 
+	border-right:0px;
+
+}
+</style>
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body>
+<br></br><br></br>
+<p align="center" style="font-family:黑体; font-size:25px">人员登记</p>
+
+<form method="post">
+<table  border=0 align="center" border="1" style="font-family:仿宋; font-size:25px">
+    <br></br>
+    	<tr>
+			<th>工号</th>
+            <td class="gray"><input name="id" type="text" class="mm"></td>
+            </tr>
+            <th>姓名</th>
+            <td class="gray"><input name="name" type="text" class="mm"></td>
+            </tr>
+            <th>性别</th>
+           <td class="gray"><input name="sex" type="radio" value="M"> 男 <input name="sex" type="radio" value="F"> 女 </td>
+        </tr>
+        <tr>
+            <th>出生日期</th>
+            <td class="gray"><input name="birthday" type="text" class="mm"></td>
+              </tr>
+            <th>支付</th>
+           <td class="gray"><input name="nation" type="text" class="mm"></td>
+        </tr>
+        <tr>
+            <th>籍贯</th>
+            <td class="gray"><input name="address" type="text" class="mm"></td>
+          </tr>
+            <th>电话</th>
+            <td class="gray"><input name="phone" type="text" class="mm"></td>
+        </tr>
+			<th>Email</th>
+            <td class="gray"><input name="email" type="text" class="mm"></td>
+
+    	 <tr>
+         	<th>职位</th>
+            <td class="gray"><input name="post_name" type="text" class="mm"></td>
+	     </tr>
+		 <tr>
+            <th>到职日期</th>
+            <td class="gray"><input name="date" type="text" class="mm"></td>
+		 </tr>
+</table>	
+   
+         
+
+<p align="center" >
+<td class="gray" ><input type="submit" value="保存" style="font-family:楷体; font-size:25px"> <input type="reset" value="重填" style="font-family:楷体; font-size:25px"></td>
+</p>
+	<div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+</form>
+</body>
+
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>main page</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/menu_elastic.css" />
+		<script src="/static/js/snap.svg-min.js"></script>
+
+	</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<script type="text/javascript">
+function info(info){
+	alert(info)
+}
+</script>
+	<body>
+		<div>
+			<div class="menu-wrap" id="jicheng">
+				<nav class="menu">
+					<div class="icon-list">
+						<hr>
+						{% if users.userid == 0 %}
+						<i class="fa fa-fw fa-star-o"></i><span>业务管理</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_yewu/">业务一览</a></li>
+						<li style=" font-family:黑体; font-size:15px"><a href="/permiss_yewu/">业务审核</a></li>
+						</ul>
+						<i class="fa fa-fw fa-user"></i><span>人员管理</span>
+ 						<ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_people/">员工一览</a></li>
+						<li style=" font-family:黑体; font-size:15px"><a href="/insert_people/">添加员工</a></li>
+						</ul>
+						<i class="fa fa-fw fa-jpy"></i><span>工资管理</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_ever_salary/">工资一览</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/pay/">结算</a></li>
+						</ul>
+
+						{% else %}
+						<i class="fa fa-fw fa-star-o"></i><span>业务管理</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/insert_yewu/">登记业务</a></li>
+
+						</ul>
+						<i class="fa fa-fw fa-user"></i><span>人员管理</span>
+                         <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_people/">员工信息</a></li>
+						</ul>
+						<i class="fa fa-fw fa-jpy"></i><span>工资管理</span>
+                        <ul>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/show_salary/">查看个人工资</a></li>
+                        <li style=" font-family:黑体; font-size:15px"><a href="/daka/" onclick=info('{{info}}')>打卡</a></li>
+						</ul>
+						{% endif %}
+						<i class="fa fa-fw fa-smile-o"></i><span>欢迎!{{people.name}}</span>
+						<ul>
+						<li style=" font-family:黑体; font-size:18px"><a href="/chang_ps/"><span>修改密码</span></a></li>
+						</ul>
+						<a href="/logout/"><i class="fa fa-fw fa-sign-out"></i><span>退出</span></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>使用说明</span></a>
+						<hr>
+						<div id="date">
+						<script>
+						setInterval("document.getElementById('date').innerHTML=new Date().toLocaleDateString();",1000);
+						</script>
+						</div>
+						<div id="time">
+						<script>
+						setInterval("document.getElementById('time').innerHTML=new Date().toLocaleTimeString();",1000);
+						</script>
+						</div>
+					</div>
+				</nav>
+
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"></path>
+					</svg>
+				</div>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap">
+					<header class="codrops-header">
+						<img class="codrops-demos" style="transform: translate(340px,0)">
+							<img src="/static/images/logo.png"><b4 style="font-size: 70px;">公司薪资管理系统</b4>
+
+						</header>
+
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+						<img src="/static/images/logo1.png"/>
+
+
+
+
+
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+		<script src="/static/js/main3.js"></script>
+		<script src="/static/js/masonry.pkgd.min.js"></script>
+		<script src="/static/js/imagesloaded.js"></script>
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/AnimOnScroll.js"></script>
+	</body>
+</html>

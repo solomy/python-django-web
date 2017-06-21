@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>签退</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+
+
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body>
+<hr>当前时间为
+<div id="time">
+<script>
+document.getElementById('time').innerHTML=new Date().toLocaleString();
+setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString();",1000);
+</script>
+</div>
+<div id="container">
+<form method="post">
+
+    <button type="button"><a href="/qiantui">签退</a></button></p>
+
+
+</form>
+</div>
+    <div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+
+</body>
+<style>
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+    #container{
+        position: relative;
+        font-size: 50px;
+        font-weight: 400;
+        transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -o-transform: translateY(50%);
+
+    }
+    button{
+        font-size:20px;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        padding: 10px 100px;
+        text-decoration: none;
+    }
+</style>
+</html>

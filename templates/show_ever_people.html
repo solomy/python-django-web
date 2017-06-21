@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>main page</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+	</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<p align="center" style="font-family:黑体; font-size:25px; color:hsla(0,0%,0%,1.00)">员工一览     <a href="/insert_people/"style="font-size: 30px">&#10010</a></p>
+    <body>
+
+        <form method="post" >
+        <p align="center">
+         <input type="text" name="search_people"  style="font-size:24px">
+         <input type="submit" value="搜索" style="font-size:24px; font-family:alexa-std">
+        </p>
+        </form>
+    </body>
+
+ <body>
+        <p align="center" style="font-family:仿宋; font-size:20px; color:#1DD3B4" >
+
+        </p>
+        </body>
+
+
+<body>
+
+<table  align="center" border="1" style="font-size: 30px">
+                <tr>
+                    <th>工号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>出生日期</th>
+                    <th>支付</th>
+                    <th>籍贯</th>
+                    <th>电话</th>
+                    <th>到职日期</th>
+                    <th>详情</th>
+                </tr>
+                    <ul>
+                        {% for people in people_list %}
+                    <tr align="center">
+                           <td>{{ people.peopleid}}</td>
+                           <td>{{ people.name }}</td>
+                           <td>{% if people.sex %} 男 {% else %} 女 {% endif %}</td>
+                           <td>{{ people.birthday}}</td>
+                           <td>{{ people.nation}}</td>
+                           <td>{{ people.address}}</td>
+                           <td>{{ people.phone}}</td>
+                           <td>{{ people.date}}</td>
+                           <form  method="get" >
+                           <td class="gray" align="center"><a href="/update_people/?id={{people.peopleid}}" >更新</a>
+                           </td>
+                           </form>
+                    </tr>
+                            {% endfor %}
+                    </ul>
+                </table>
+	<div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+
+</body>
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

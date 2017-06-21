@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>查看业务</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+	</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<p align="center" style="font-family:黑体; font-size:25px">业务一览</p>
+    <body>
+
+        <form method="post" >
+        <p align="center">
+         <input type="text" name="search_yewu" style="font-size:24px">
+            <input type="submit" value="搜索" style="font-size:24px; font-family:alexa-std">
+        </p>
+        </form>
+        </body>
+<table  align="center" border="1" style="font-size: 30px">
+	<caption>
+
+
+    </caption>
+
+	<tr>
+		<th>业务ID</th>
+		<th>业务名称</th>
+        <th>金额</th>
+        <th>负责人ID</th>
+        <th>负责人</th>
+        <th>日期</th>
+        <th>备注</th>
+		<th>是否审过</th>
+		<th>是否通过</th>
+
+	</tr>
+	{% for yewu in yewu_list %}
+
+	<tr>
+
+
+  		<td class="gray"><label title="{{yewu.yewuid}}">{{yewu.yewuid}}</label></td>
+		<td class="gray"><label title="{{yewu.titile}}">{{yewu.title}}</label></td>
+        <td class="gray"><label title="{{yewu.money}}">{{ yewu.money }}</label></td>
+		<td class="gray"><label title="{{yewu.yewupeopleid_id}}">{{yewu.yewupeopleid_id}}</label></td>
+        <td class="gray"><label title="{{yewu.person}}">{{yewu.person}}</label></td>
+		<td class="gray"><label title="{{yewu.date}}">{{ yewu.date }}</label></td>
+        <td class="gray"><label title="{{yewu.beizhu}}">{{yewu.beizhu}}</label></td>
+		<td class="gray"><label title="{{yewu.isover}}">{% if yewu.isover %}是{% else %}否{% endif %}</label></td>
+		<td class="gray"><label title="{{yewu.ispermiss}}">{% if yewu.ispermiss %}是{% else %}否{% endif %}</label></td>
+
+ 	</tr>
+	{% endfor %}
+</table>
+        <div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+	</body>
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

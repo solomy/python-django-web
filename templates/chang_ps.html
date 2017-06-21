@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>修改密码</title>
+<style type="text/css">
+    label {color:green}
+</style>
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body>
+<form method="get" align="center">
+
+<div id="container">
+{% block content %}
+
+    {% if form.error %}
+	<p calss="error">两次密码输入不相同，请重新输入</p>
+    {% endif %}
+
+	<p>
+	<label for="password">密码:</label>
+	<input type="password" name="password" value="" id="password" style="font-size: 30px;transform: translate(15px);">
+	</p>
+    <p>
+    <label for="password">重复:</label>
+	<input type="password" name="password1" value="" id="password1" style="font-size: 30px;transform: translate(15px);">
+	</p>
+</div>
+	<button type="submit">保存 </button>
+	<button type="submit" ><a href="/main">返回</a></button>
+    <p>{{info}}</p>
+</form>
+{% endblock %}
+</body>
+<style>
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+    #container{
+        font-size: 30px;
+        position: relative;
+        transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -o-transform: translateY(50%);
+    }
+
+    button{
+        transform: translate(40px,100px);
+        font-size:20px;
+        color: black;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        padding: 10px 30px;
+        text-decoration: none;
+    }
+</style>
+</html>

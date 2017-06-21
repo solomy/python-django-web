@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>登陆</title>
+
+
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body align="center">
+<form method="post" >
+<div id="container">
+    {% block content %}
+
+    {% if form.error %}
+	<p calss="error">该用户名不存在，或者密码不正确</p>
+    {% endif %}
+
+
+	<p style="transform: translateY(-10%);">
+        <label for="userid">用户名:</label>
+	<input type="text" name="userid" value="" id="userid" style="font-size: 30px;">
+	</p>
+	<p style="transform: translateY(10%);">
+        <label for="password">密码:</label>
+	<input type="password" name="password" value="" id="password" style="font-size: 30px;transform: translateX(15px);">
+        </p>
+</div>
+<div id="kuan">
+<button type="submit" >登陆 </button>
+<button type="submit" ><a href="/register"style="text-decoration-line: none";>注册</a></button>
+<input type="hidden" name="next" value="{{ next|escape}}" />
+</div>
+</form>
+
+{% endblock %}
+
+</body>
+<style>
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+    #container{
+        font-size: 30px;
+        position: relative;
+        transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -o-transform: translateY(50%);
+    }
+
+    button{
+        transform: translate(40px,70px);
+        font-size:20px;
+        color: black;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        padding: 10px 30px;
+        text-decoration: none;
+    }
+</style>
+</html>

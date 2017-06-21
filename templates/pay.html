@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>main page</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+	</head>
+	<body>
+
+
+            <p align="center" style="font-family:黑体; font-size:25px; color:hsla(0,0%,0%,1.00)">工资详情</p>
+
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<script type="text/javascript">
+function logout(id,type){
+dt2 = new Date();
+
+	if(dt2.getDay() == 5 && type ==2)
+	{
+		alert("打印工资单成功！");
+		window.location.href="/print_pay/?id="+id
+	}
+	else if(dt2.getDate() == 21 && type != 2)
+	{
+		alert("打印工资单成功！");
+		window.location.href="/print_pay/?id="+id
+	}
+    else{
+        alert("未到结算日，不可结算！")
+    }
+}
+</script>
+
+<table  align="center" border="1" style="font-size: 30px">
+         <tr align="center">
+            <th>ID</th>
+          	<th>姓名</th>
+             <th>员工种类</th>
+            <th>工作小时</th>
+             <th>提成</th>
+          	<th>罚款</th>
+            <th>总共</th>
+             <th>结算</th>
+        </tr>
+        {% for salary in salary_list %}
+        {% if salary.sub > 0 %}
+        <td id="sid" colspan="1" >{{salary.salaryid_id}}</td>
+            {% for people in people_list %}
+                {% if people.peopleid == salary.salaryid_id %}
+        <td colspan="1">{{people.name}}</td>
+            {% if people.ptype_id == 0 %}
+            <td colspan="1">管理员</td>
+            {% endif %}
+            {% if people.ptype_id == 1 %}
+            <td colspan="1">正式工</td>
+            {% endif %}
+            {% if people.ptype_id == 2 %}
+            <td colspan="1">小时工</td>
+            {% endif %}
+            {% if people.ptype_id == 3 %}
+            <td colspan="1">提成工</td>
+            {% endif %}
+                {% endif %}
+            {% endfor %}
+        <td colspan="1">{{salary.hour}}</td>
+        <td colspan="1">{{salary.plus}}</td>
+        <td colspan="1">{{salary.forfeit}}</td>
+        <td colspan="1">{{salary.sub}}</td>
+
+        <td><button style="font-size: 30px" onclick=logout('{{salary.salaryid_id}}','people.ptype_id')>结算</button></td>
+        {% endif %}
+        </tr>
+
+       {% endfor %}
+       </table>
+        <p id="demo"></p>
+			<div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+	</body>
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

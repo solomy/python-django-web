@@ -1,0 +1,103 @@
+<html>
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>员工一览</title>
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+
+
+
+<style type="text/css">
+table{
+	width:80%;
+	font-size:18px;
+	transform: translate(0,200px);
+	empty-cells:show;
+	border-collapse:collapse;
+	table-layout:fixed;
+	color:#666;
+}
+th{
+	heigth:30px;
+	overflow:hidden;
+	width:110px;
+}
+td{
+	heigth:30px;
+	overflow:hidden;
+	width:150px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	word-break:break-all;
+
+}
+</style>
+</head>
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+<body>
+<div>
+
+
+
+<body>
+        	<p align="center" style="font-family:黑体; font-size:22px;transform: translate(0,100px);">员工信息</p>
+            <table border=1 align="center" style="font-family:仿宋; font-size:20px">
+                <tr>
+                    <th>工号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>出生日期</th>
+                    <th>支付</th>
+                    <th>籍贯</th>
+                    <th>电话</th>
+                    <th>到职日期</th> 
+                    <th>详情</th>
+                </tr>
+				<ul>
+
+				<tr align="center">
+					<td>{{ people.peopleid}}</td>
+					   <td>{{ people.name }}</td>
+					   <td>{% if people.sex %} 男 {% else %} 女 {% endif %}</td>
+					   <td>{{ people.birthday}}</td>
+					   <td>{{ people.nation}}</td>
+					   <td>{{ people.address}}</td>
+					   <td>{{ people.phone}}</td>
+					   <td>{{ people.date}}</td>
+					   <form  method="get" >
+                           <td class="gray" align="center"><a href="/update_people/?id={{people.peopleid}}" >更新</a>
+                           </td>
+					   </form>
+				</tr>
+
+				</ul>
+
+			</table>
+<div align="center" style="font-size:50px;position: absolute;top:25px;left: 35px "><a href="/main/"><i class="fi-home"></i></a></div>
+</body>
+<style>
+
+    body{
+        background: #b4bad2;
+        color: #fffce1;
+        font-weight: 400;
+        font-family: 'Raleway', Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</html>

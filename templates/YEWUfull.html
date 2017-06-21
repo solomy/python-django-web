@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+    <style> 
+		.gray{
+			border-bottom:1px solid #000000;
+			width:150px;
+			border-left:0px; border-top:0px; border-right:0px;
+			
+			background-color:transparent;
+			font-size:20px;
+		}
+		.mm{
+			
+			border-left:0px; border-top:0px; border-right:0px;
+			border-bottom:0px;
+			background-color:transparent;
+			font-size:20px;
+			height:30px;
+			width:270px;
+		}
+		.kk{
+			border-left:0px; border-top:0px; border-right:0px;
+			border-bottom:0px;
+			font-size:18px;
+		}
+		table{
+			width:80%;
+			font-size:18px;
+			empty-cells:show;
+			border-collapse:collapse;
+			width:auto;
+			color:#666;
+		}
+		th{
+			heigth:30px;
+			overflow:hidden;
+			width:110px;
+		}
+		td{
+			heigth:30px;
+			overflow:hidden;
+			width:200px;
+		}
+	</style>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>业务一览</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/menu_elastic.css" />
+		<script src="/static/js/snap.svg-min.js"></script>
+		
+	</head>
+	<body>
+		<div>
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="#"><i class="fa fa-fw fa-star-o"></i><span>公司账户</span></a>
+						<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>人员管理</span></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>发票管理</span></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>使用说明</span></a>
+						
+					</div>
+				</nav>
+				
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
+					</svg>
+				</div>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap" style="overflow:auto">
+				<div style="background:hsla(0,0%,100%,1.00)">
+					<header class="codrops-header" style="line-height:none; alignment-adjust:auto">
+              
+						
+<table  align="center" border="1" style="font-family:仿宋; font-size:25px">
+	<caption>
+    <p align="center" style="font-size:30px">业务记录<br>
+     <p align="right" style="font-size:20px">登记日期:{{yewu.checkinDate}}</p>
+    </caption>
+		<tr>
+        	<th>业务名称</th>
+            <td colspan="3">{{yewu.title}}</td></tr>
+    	<tr>
+            <th>客户</th>
+            <td>{{yewu.client}}</td>
+            <th>客户电话</th>
+            <td>{{yewu.phone}}</td>
+        </tr>
+        <tr>
+        	<th>收/支</th>
+            <td>{% if yewu.zhishou %} 收入 {% else %} 支出 {% endif %}</td><th>金额（元）</th><td>{{yewu.money}}</td>
+         </tr>
+    	 <tr>
+         	<th>负责人</th>
+            <td>{{yewu.person}}</td>
+            <th>执行日期</th>
+            <td>{{yewu.date}}</td>
+         </tr>
+         <tr>
+         <th>备注</th>
+         <td colspan="3" height="200px">{{yewu.beizhu}}</td>
+         </tr>
+         </table>
+				<nav class="codrops-demos" >
+                </nav>
+					</header>>
+				</div>
+			</div><!-- /content-wrap -->
+	</div><!-- /container -->
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/main3.js"></script>
+	</body>
+</html>
